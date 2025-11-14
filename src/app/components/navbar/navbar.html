@@ -1,0 +1,65 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <div class="container">
+
+    <a class="navbar-brand" routerLink="/">
+      <img src="assets/img/logo.png" alt="Logo" style="height: 40px;">
+      Tablero Mágico
+    </a>
+
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ms-auto">
+
+        <!-- Inicio -->
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/">Inicio</a>
+        </li>
+
+        <!-- Categorías -->
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown">
+            Categorías
+          </a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" routerLink="/categorias/estrategia">Estrategia</a></li>
+            <li><a class="dropdown-item" routerLink="/categorias/familiares">Familiares</a></li>
+            <li><a class="dropdown-item" routerLink="/categorias/cartas">Cartas</a></li>
+          </ul>
+        </li>
+
+        <!-- Carrito -->
+        <li class="nav-item">
+          <a class="nav-link position-relative" routerLink="/carrito">
+            🛒
+            <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">0</span>
+          </a>
+        </li>
+
+        <!-- Perfil -->
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown">
+            Usuario
+          </a>
+          <ul class="dropdown-menu dropdown-menu-end">
+            <li><a class="dropdown-item" routerLink="/perfil">Mi Perfil</a></li>
+            <li><hr class="dropdown-divider"></li>
+            <li><a class="dropdown-item text-danger">Cerrar sesión</a></li>
+          </ul>
+        </li>
+
+        <!-- Login -->
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/login">Iniciar sesión</a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/registro">Registro</a>
+        </li>
+
+      </ul>
+    </div>
+  </div>
+</nav>

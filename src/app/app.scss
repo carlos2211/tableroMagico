@@ -1,0 +1,309 @@
+/* ===========================================================
+   Proyecto: Tablero Mágico
+   Diseño moderno, dinámico y con identidad visual propia.
+   =========================================================== */
+
+/* ------------------------------
+   PALETA DE COLORES Y FUENTES
+-------------------------------- */
+:root {
+    --rojo-magico: #b82c2c;
+    --vino-oscuro: #3d0b0b;
+    --dorado: #d4a748;
+    --beige-fondo: #faf3e3;
+    --gris-texto: #2b2b2b;
+    --blanco: #fff;
+    --fuente-principal: 'Quicksand', 'Poppins', sans-serif;
+}
+
+/* ------------------------------
+   ESTILOS GENERALES
+-------------------------------- */
+body {
+    background: var(--beige-fondo);
+    font-family: var(--fuente-principal);
+    color: var(--gris-texto);
+    margin: 0;
+    padding: 0;
+}
+
+html, body {
+  height: 100%;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+main {
+  flex: 1; /* ocupa el espacio libre */
+}
+
+/* ------------------------------
+   NAVBAR PERSONALIZADA
+-------------------------------- */
+.navbar {
+    background: linear-gradient(90deg, var(--vino-oscuro), var(--rojo-magico));
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+}
+
+.navbar-brand {
+    font-weight: 700;
+    font-size: 1.5rem;
+    color: var(--dorado) !important;
+    letter-spacing: 0.5px;
+}
+
+.navbar-brand img {
+    height: 45px;
+    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3));
+}
+
+.navbar-nav .nav-link {
+    color: var(--blanco);
+    font-weight: 500;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.navbar-nav .nav-link:hover,
+.navbar-nav .nav-link.active {
+    color: var(--dorado);
+}
+
+.navbar-nav .nav-link::after {
+    content: "";
+    position: absolute;
+    bottom: 2px;
+    left: 0;
+    width: 0%;
+    height: 2px;
+    background: var(--dorado);
+    transition: width 0.3s ease;
+}
+
+.navbar-nav .nav-link:hover::after {
+    width: 100%;
+}
+
+/* ------------------------------
+   TITULOS Y TEXTOS
+-------------------------------- */
+h1,
+h2,
+h3 {
+    color: var(--vino-oscuro);
+    font-weight: 700;
+    text-align: center;
+}
+
+h1 {
+    font-size: 2.2rem;
+    text-shadow: 0 2px 4px rgba(184, 44, 44, 0.2);
+}
+
+p {
+    color: #444;
+    text-align: center;
+}
+
+.row img {
+    width: 80%;
+    height: 250px;
+    border-radius: 10px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.row img:hover {
+    transform: scale(1.03);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+}
+
+/* ------------------------------
+   SECCIÓN DE CATEGORÍAS
+-------------------------------- */
+.categorias {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+    gap: 2rem;
+    padding: 2rem 1rem;
+}
+
+/* Tarjeta */
+.categoria {
+    background: var(--blanco);
+    border-radius: 18px;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    border: 2px solid transparent;
+    text-align-last: center;
+}
+
+.categoria:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+    border: 2px solid var(--dorado);
+}
+
+/* Imagen dentro de la tarjeta */
+.categoria img {
+    align-content: center;
+    width: 80%;
+    height: 200px;
+    /* object-fit: cover; */
+    border-bottom: 4px solid var(--rojo-magico);
+    transition: transform 0.4s ease;
+}
+
+.categoria:hover img {
+    transform: scale(1.05);
+}
+
+/* Texto */
+.categoria h2 {
+    font-size: 1.4rem;
+    margin-top: 0.8rem;
+    color: var(--rojo-magico);
+}
+
+.categoria p {
+    font-size: 0.95rem;
+    margin: 0.6rem 1rem 1.4rem;
+    color: #555;
+}
+
+/* ------------------------------
+   BOTÓN "VOLVER"
+-------------------------------- */
+a.text-decoration-none.d-block.mb-3 {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: linear-gradient(90deg, #b82c2c, #4b0000);
+  color: #fff !important;
+  padding: 10px 18px;
+  border-radius: 30px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  width: 120px;
+  align-items: center;
+  justify-content: center;
+}
+
+a.text-decoration-none.d-block.mb-3:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.25);
+  background: linear-gradient(90deg, #d93636, #7a0505);
+}
+
+
+
+/* ------------------------------
+   FOOTER
+-------------------------------- */
+footer {
+    background: var(--vino-oscuro);
+    color: var(--blanco);
+    padding: 1.2rem 0;
+    border-top: 3px solid var(--dorado);
+    font-size: 0.95rem;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+    margin-top: auto;
+}
+
+/* ------------------------------
+   RESPONSIVIDAD
+-------------------------------- */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 1.8rem;
+    }
+
+    .categorias {
+        grid-template-columns: 1fr;
+        padding: 1.2rem;
+    }
+
+    .categoria img {
+        height: 180px;
+    }
+}
+
+/* --- Animación del carrito --- */
+@keyframes bounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  25% {
+    transform: translateY(-6px);
+  }
+  50% {
+    transform: translateY(2px);
+  }
+  75% {
+    transform: translateY(-2px);
+  }
+}
+
+@keyframes flash {
+  0% { color: var(--rojo-magico); }
+  50% { color: #ffd700; }
+  100% { color: var(--rojo-magico); }
+}
+
+.carrito-animado {
+  animation: bounce 0.4s ease, flash 0.8s ease;
+}
+
+.btn-agregar
+{
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+
+/* ==== Estilo moderno para el dropdown de Categorías ==== */
+.navbar .dropdown-menu {
+  background: linear-gradient(180deg, var(--vino-oscuro) 0%, var(--rojo-magico) 100%);
+  border: none;
+  border-radius: 12px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
+  padding: 0.5rem 0;
+  min-width: 180px;
+  transform-origin: top center;
+  animation: fadeInDown 0.25s ease-out;
+}
+
+.navbar .dropdown-item {
+  color: #fff;
+  font-weight: 500;
+  padding: 0.6rem 1.2rem;
+  transition: all 0.2s ease;
+}
+
+.navbar .dropdown-item:hover {
+  background-color: rgba(255, 255, 255, 0.15);
+  color: #fff;
+  padding-left: 1.6rem;
+}
+
+.navbar .dropdown-toggle::after {
+  border: none;
+  content: "▾";
+  margin-left: 6px;
+  font-size: 0.9em;
+}
+
+@keyframes fadeInDown {
+  0% {
+    opacity: 0;
+    transform: translateY(-8px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

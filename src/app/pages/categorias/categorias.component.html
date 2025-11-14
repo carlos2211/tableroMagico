@@ -1,0 +1,17 @@
+<div class="container my-5">
+
+  <h1 class="text-center mb-4">{{ titulo }}</h1>
+
+  <div class="row mt-4">
+    <div class="col-md-4 mb-4" *ngFor="let p of productosFiltrados">
+      <div class="card shadow-sm">
+        <img [src]="p.imagen" class="card-img-top" [alt]="p.nombre">
+        <div class="card-body text-center">
+          <h5 class="card-title">{{ p.nombre }}</h5>
+          <p class="card-text">${{ p.precio }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>

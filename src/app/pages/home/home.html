@@ -1,0 +1,10 @@
+<div class="categorias-row">
+
+  <div class="categoria-card" *ngFor="let c of categorias">
+    <a [routerLink]="['/categorias', c.slug]">
+      <img [src]="c.imagen" [alt]="c.nombre">
+      <h3 class="categoria-nombre">{{ c.nombre }}</h3>
+    </a>
+  </div>
+
+</div>

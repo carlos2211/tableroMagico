@@ -1,0 +1,57 @@
+/* Contenedor principal de las categorías */
+.categorias-row {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 2rem;
+  flex-wrap: nowrap;     /* ← Mantenerlas al lado mientras haya espacio */
+  margin-top: 2rem;
+}
+
+/* Cada tarjeta */
+.categoria-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 300px;       /* Tamaño uniforme */
+}
+
+/* Imagen */
+.categoria-card img {
+  width: 100%;
+  height: 350px;
+  object-fit: cover;
+  border-radius: 12px;
+  box-shadow: 0 4px 14px rgba(0,0,0,0.15);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.categoria-card img:hover {
+  transform: scale(1.03);
+  box-shadow: 0 6px 20px rgba(0,0,0,0.25);
+}
+
+/* Título debajo */
+.categoria-nombre {
+  margin-top: 0.8rem;
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: var(--vino-oscuro);
+  text-align: center;
+}
+
+/* 📱 RESPONSIVE: en pantallas pequeñas, apilar */
+@media (max-width: 992px) {
+  .categorias-row {
+    flex-wrap: wrap;       /* ← Permite que bajen */
+    justify-content: center;
+  }
+
+  .categoria-card {
+    width: 260px;
+  }
+
+  .categoria-card img {
+    height: 260px;
+  }
+}
